@@ -1,0 +1,530 @@
+/* Общие настройки */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212; /* Глубокий черный/серый */
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+/* Шапка */
+.header {
+    background: rgba(18, 18, 18, 0.95);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #e50914; /* Красный акцент */
+}
+
+.nav a {
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav a:hover {
+    color: #e50914;
+}
+
+.btn-call {
+    border: 2px solid #e50914;
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: #e50914;
+    font-weight: 700;
+}
+
+.btn-call:hover {
+    background: #e50914;
+    color: #fff;
+}
+
+/* Hero Section (Главный экран) */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* Здесь нужно поставить фото черной машины на фон */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.btn-main {
+    background: #e50914;
+    color: #fff;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.btn-main:hover {
+    background: #b20710;
+}
+
+/* Секции */
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #e50914;
+    margin: 10px auto 0;
+}
+
+/* Услуги */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: #e50914;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Галерея */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.photo {
+    height: 250px;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    /* Имитация картинки */
+    background-image: url('https://images.unsplash.com/photo-1617788138017-80ad40651399?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.photo span {
+    background: rgba(0,0,0,0.8);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Контакты и форма */
+.contacts {
+    background: #0f0f0f;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.info-item {
+    margin: 10px;
+}
+
+.info-item h3 {
+    color: #e50914;
+    margin-bottom: 10px;
+}
+
+.booking-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select {
+    padding: 15px;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #e50914;
+}
+
+/* Футер */
+footer {
+    padding: 30px 0;
+    text-align: center;
+    background: #000;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 768px) {
+    .nav { display: none; } /* Скрываем меню на мобильном для простоты */
+    .hero h1 { font-size: 36px; }
+    .header .container { justify-content: center; }
+    .logo { margin-right: auto; }
+}
+/* --- Стили для каталога товаров --- */
+
+.product-grid {
+    display: grid;
+    /* Адаптивная сетка: авто-заполнение */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #1e1e1e; /* Темный фон карточки */
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    border: 1px solid #333;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #555;
+}
+
+/* Картинка товара */
+.product-image {
+    height: 200px;
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Имитация значка "Закладка" как на фото */
+
+.product-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Цена - жирная и белая */
+.product-price {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+/* Название услуги - серый текст поменьше */
+.product-title {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Кнопка "Написать" */
+.btn-product {
+    width: 100%;
+    background-color: #e0e0e0; /* Светло-серый фон кнопки */
+    color: #000; /* Черный текст */
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.btn-product:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.photo {
+    height: 250px;
+    background-size: cover; /* Чтобы фото заполняло блок полностью */
+    background-position: center; /* Центрирование фото */
+    display: flex;
+    align-items: flex-end; /* Надпись будет внизу */
+    justify-content: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.photo span {
+    background: rgba(0, 0, 0, 0.7); /* Черный полупрозрачный фон для текста */
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+/* Соцсети в контактах */
+.social-links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.soc-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.tg { background-color: #0088cc; } /* Цвет Telegram */
+.vk { background-color: #4c75a3; } /* Цвет VK */
+
+.soc-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+/* Стили футера */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-socials a {
+    margin-left: 15px;
+    color: #666;
+    font-weight: bold;
+}
+
+.footer-socials a:hover {
+    color: #fff;
+}
+
+/* Мобильная адаптация для соцсетей */
+@media (max-width: 768px) {
+    .footer-content {
+        justify-content: center;
+        text-align: center;
+    }
+}
+/* Контейнер для кнопок в шапке */
+.header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Кнопка ТГ в шапке (синяя) */
+.btn-tg-small {
+    background-color: #0088cc;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-tg-small:hover {
+    background-color: #00aaff;
+    transform: translateY(-2px);
+}
+
+/* Кнопка Позвонить (уже была, но подправим размер) */
+.btn-call {
+    border: 2px solid #e50914;
+    padding: 6px 15px;
+    border-radius: 4px;
+    color: #e50914;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* Адаптивность для мобилок */
+@media (max-width: 480px) {
+    .logo { font-size: 18px; }
+    .btn-tg-small, .btn-call {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+    .header-actions { gap: 5px; }
+}
+/* 1. Удаляем стиль иконки, он больше не нужен */
+/* 2. Настраиваем контейнер картинки для эффекта приближения */
+.product-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* Важно: всё, что выходит за границы при увеличении, будет скрыто */
+    overflow: hidden; 
+    transition: 0.4s ease-in-out;
+}
+
+/* 3. Эффект приближения при наведении на карточку */
+.product-card:hover .product-image {
+    transform: scale(1.1); /* Увеличиваем картинку на 10% */
+}
+
+/* 4. Чтобы сама карточка не дергалась при увеличении картинки */
+.product-card {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden; /* Обрезает увеличивающуюся картинку по краям карточки */
+    transition: transform 0.3s ease;
+    border: 1px solid #333;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Сама карточка чуть приподнимается */
+    border-color: #e50914; /* Подсветка границы цветом OperAvto */
+}
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 2000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9); /* Черный фон с прозрачностью */
+    cursor: zoom-out;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+    border: 2px solid #333;
+    animation: zoom 0.3s;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: #ccc;
+    padding: 20px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Указатель, что на фото можно нажать */
+.photo {
+    cursor: pointer;
+    transition: 0.3s;
+}
+.photo:hover {
+    filter: brightness(1.2);
+}
